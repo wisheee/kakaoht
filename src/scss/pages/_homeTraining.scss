@@ -50,7 +50,7 @@
   margin-top: 3rem;
   line-height: 7rem;
   font-size: 5rem;
-  font-weight: $fw-lignt;
+  font-weight: $fw-light;
 
   span {
     opacity: 0.6;
@@ -149,7 +149,7 @@
 .home-training-my-section {
   position: relative;
   height: 54.6rem;
-  background: #111;
+  background: $c-sub-black;
   color: #fff;
   
   .inner {
@@ -163,7 +163,7 @@
 .home-training-ring-section {
   position: relative;
   height: 300vh;
-  background: #111;
+  background: $c-sub-black;
   color: #fff;
   
   .inner {
@@ -213,7 +213,7 @@
 .l-recorder {
   line-height: 6.8rem;
   font-size: 5.4rem;
-  font-weight: $fw-lignt;
+  font-weight: $fw-light;
   color: $c-gray;
 
   .recorder {
@@ -259,7 +259,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(-180deg, rgba(17, 17, 17, 0) 0%, #111 110%);
+    background: linear-gradient(-180deg, rgba(17, 17, 17, 0) 0%, $c-sub-black 110%);
   }
 }
 

@@ -8,3 +8,15 @@
   border-radius: 50%;
   background-color: $c-main-yellow;
 }
+
+%input {
+  padding: 1.3rem 1.2rem;
+  background-color: #161616;
+  border: 1px solid #242424;
+  border-radius: 0.8rem;
+  line-height: 1.8rem;
+  font-size: 1.6rem;
+  color: $c-dark-white;
+
+  @include font-main;
+}
