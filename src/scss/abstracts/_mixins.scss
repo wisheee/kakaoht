@@ -1,3 +1,16 @@
 @mixin font-main {
-  font-family: 'Spoqa Han Sans', AppleGothic, Roboto, sans-serif;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+
+@mixin ellipsis($lines: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @if ($lines == 1) {
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+  }
 }

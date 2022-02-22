@@ -60,14 +60,3 @@ button {
 		outline: none;
 	}
 }
-html {
-	line-height: 1.2;
-	font-size: 62.5%;
-}
-body {
-	font-weight: $fw-normal;
-	color: $c-black;
-	-webkit-font-smoothing: antialiased;
-
-	@include font-main;
-}

@@ -1,0 +1,51 @@
+html {
+	line-height: 1.2;
+	font-size: 62.5%;
+}
+
+body {
+	font-weight: $fw-normal;
+	color: $c-black;
+	-webkit-font-smoothing: antialiased;
+
+	@include font-main;
+
+	&.lock-screen {
+		overflow: hidden;
+		height: 100%;
+	}
+
+	.visible-item {
+		visibility: visible;
+		opacity: 1;
+	}
+	
+	.hidden-item {
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+
+.wrap {
+	overflow-x: hidden;
+}
+
+.inner {
+  display: flex;
+  position: relative;
+  width: 80%;
+  max-width: 106rem;
+  height: 100%;
+  margin: auto;
+}
+
+.text-hidden {
+  overflow: hidden;
+  border: 0;
+  position: absolute;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+}
