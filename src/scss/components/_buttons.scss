@@ -6,4 +6,10 @@
   border-radius: 10rem;
   font-size: 2rem;
   font-weight: $fw-bold;
+
+  &:hover {
+    border-color: $c-main-yellow;
+    background-color: $c-main-yellow;
+    color: #404040;
+  }
 }

@@ -1,14 +1,57 @@
 footer {
-  position: relative;
-  padding: 3em;
-  font-size: 1.4rem;
-  background: #39424c;
-  color: #b2bbc3;
-
-  span {
-    display: inline-block;
-    font-size: 1.2rem;
-    padding: 0.8em 0 1.2em;
-    color: #647586;
+  height: 55rem;
+  line-height: 2.4rem;
+  font-size: 1.6rem;
+  background: $c-black;
+  color: #717883;
+  
+  .inner {
+    flex-direction: column;
+    justify-content: center;
   }
+}
+
+.footer-bi {
+  width: 9.8rem;
+  height: 2rem;
+  background: url('../images/footer/BI_3.png') no-repeat center;
+}
+
+.l-company-info {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 3.3rem;
+  
+  dd {
+    margin-left: 0.8rem;
+    color: #c4c4c4;
+
+    address {
+      font-style: normal;
+    }
+  }
+
+  .company-number {
+    margin-left: 1rem;
+
+    &::before {
+      content: '|';
+      margin-right: 1rem;
+      color: #414141;
+    }
+  }
+
+  .break-column {
+    flex-basis: 100%;
+    height: 0;
+    margin: 0.4rem 0;
+  }
+}
+
+.l-copyright {
+  margin-top: 1.8rem;
+}
+
+.l-sns {
+  margin-top: 3rem;
 }
