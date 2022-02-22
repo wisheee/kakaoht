@@ -1,0 +1,321 @@
+// ----- 스마트홈트 인트로 이미지 섹션 시작 -----
+.home-training-intro-section {
+  position: relative;
+  height: 100vh;
+  background: #fff;
+  
+  .inner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.l-training-image {
+  width: 25rem;
+  height: 25rem;
+}
+
+.l-training-text {
+  margin-top: 4rem;
+}
+// ----- 스마트홈트 인트로 이미지 섹션 끝 -----
+
+// ----- 스마트홈트 나와 맞는 운동 섹션 시작 -----
+.home-training-program-section {
+  position: relative;
+  height: 120.5rem;
+  background: $c-black;
+  color: #fff;
+  
+  .inner {
+    flex-direction: column;
+    padding-top: 19rem;
+  }
+
+  .l-phone {
+    position: absolute;
+    right: 0;
+  }
+}
+
+.home-training-section-text {
+  color: $c-main-yellow;
+  font-weight: $fw-bold;
+  font-size: 2.5rem;
+  line-height: 2.9rem;
+}
+
+.home-training-title {
+  margin-top: 3rem;
+  line-height: 7rem;
+  font-size: 5rem;
+  font-weight: $fw-lignt;
+
+  span {
+    opacity: 0.6;
+  }
+  
+  strong {
+    &:nth-of-type(1) {
+      display: block;
+    }
+
+    &:nth-of-type(2) {
+      position: relative;
+
+      &::after {
+        @extend %child-dot;
+      }
+    }
+  }
+}
+
+.phone {
+  position: relative;
+  overflow: hidden;
+  padding-left: 2.2rem;
+  width: 40rem;
+  height: 82.5rem;
+  background-color: $c-black;
+  border: 1rem solid #2c2c2c;
+  border-radius: 5rem;
+}
+
+.l-phone-header {
+  display: flex;
+  align-items: center;
+  height: 6.2rem;
+  margin-bottom: 1rem;
+}
+
+.phone-header-bi {
+  display: block;
+  width: 10.7rem;
+  height: 2.4rem;
+  background: url('../images/common/Main.png') no-repeat center;
+  background-size: contain;
+}
+
+.l-phone-content {
+  p {
+    margin-bottom: 1.75rem;
+    color: rgba($color: #fff, $alpha: 0.87);
+    font-size: 2rem;
+    line-height: 2.7rem;
+    letter-spacing: 0.06rem;
+  }
+}
+
+.phone-content-program {
+  padding-bottom: 4.2rem;
+
+  img:last-child {
+    margin-left: 1.8rem;
+  }
+}
+
+.phone-content-fit {
+  display: flex;
+
+  img {
+    margin-right: 1.8rem;
+  }
+}
+
+.phone-content-banner {
+  padding-top: 4.2rem;
+  padding-right: 2.2rem;
+}
+
+.l-phone-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6.7rem;
+  background: rgba(30, 30, 30, 0.8);
+  backdrop-filter: blur(1.1rem);
+
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+  }
+}
+// ----- 스마트홈트 나와 맞는 운동 섹션 끝 -----
+
+// ----- 스마트홈트 나의 숨결 기록 섹션 시작 -----
+.home-training-my-section {
+  position: relative;
+  height: 54.6rem;
+  background: #111;
+  color: #fff;
+  
+  .inner {
+    flex-direction: column;
+    padding-top: 19rem;
+  }
+}
+// ----- 스마트홈트 나의 숨결 기록 섹션 끝 -----
+
+// ----- 스마트홈트 운동 링 섹션 시작 -----
+.home-training-ring-section {
+  position: relative;
+  height: 300vh;
+  background: #111;
+  color: #fff;
+  
+  .inner {
+    flex-direction: column;
+  }
+}
+
+.l-ring-content {
+  display: flex;
+}
+
+.ring {
+  margin-right: 9.2rem;
+
+  svg {
+    width: 55rem;
+    height: 55rem;
+    background-image: url('../images/home_training/Ring_Step1.gif');
+    background-repeat: no-repeat;
+    background-position: 50% 80%;
+    background-size: 40rem;
+    transition: 0.5s;
+  }
+
+  circle {
+    fill: transparent;
+    stroke: #202020;
+    stroke-width: 0.4rem;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50%;
+  }
+
+  .ring-yellow {
+    stroke: $c-main-yellow;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 200;
+  }
+
+  .ring-light-purple {
+    stroke: $c-light-purple;
+    stroke-dasharray: 251;
+    stroke-dashoffset: 178;
+  }
+}
+
+.l-recorder {
+  line-height: 6.8rem;
+  font-size: 5.4rem;
+  font-weight: $fw-lignt;
+  color: $c-gray;
+
+  .recorder {
+    margin-right: 0.3rem;
+    line-height: 8.8rem;
+    font-size: 7rem;
+    font-weight: $fw-bold;
+  }
+}
+
+.recorder-title {
+  line-height: 2.5rem;
+  font-size: 2rem;
+  font-weight: $fw-bold;
+  color: #fff;
+}
+
+.record-time {
+  margin-bottom: 4.3rem;
+  
+  span {
+    color: $c-main-yellow;
+  }
+}
+
+.record-calorie {
+  span {
+    color: $c-light-purple;
+  }
+}
+
+.l-record-comment {
+  position: relative;
+  margin-top: 9.6rem;
+  font-size: 5rem;
+  line-height: 7rem;
+  color: #fff;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-180deg, rgba(17, 17, 17, 0) 0%, #111 110%);
+  }
+}
+
+.record-comment {
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 1.8rem;
+    height: 1.3rem;
+    background-repeat: no-repeat;
+  }
+
+  &::before {
+    top: 0;
+    left: -2.5rem;
+    background-image: url('../images/home_training/Quote_Open.png');
+  }
+
+  &::after {
+    bottom: 0;
+    right: -2.5rem;
+    background-image: url('../images/home_training/Quote_Close.png');
+  }
+}
+// ----- 스마트홈트 운동 링 섹션 끝 -----
+
+// ----- 스마트홈트 플레이리스트 섹션 시작 -----
+.home-training-playlist-section {
+  position: relative;
+  height: 156.8rem;
+  background: $c-black;
+  color: #fff;
+  
+  .inner {
+    flex-direction: column;
+    padding-top: 19rem;
+  }
+
+  .l-playlist-phone {
+    position: absolute;
+    right: 0;
+  }
+
+  .l-tutorial-phone {
+    position: absolute;
+    left: 0;
+    bottom: 18rem;
+  }
+
+  .phone {
+    box-sizing: content-box;
+    padding-left: 0;
+  }
+}
+// ----- 스마트홈트 플레이리스트 섹션 끝 -----
