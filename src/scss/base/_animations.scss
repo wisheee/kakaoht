@@ -1,0 +1,19 @@
+// 로더 회전 애니메이션
+@keyframes loading-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// 로더 원 그리기 애니메이션
+@keyframes loading-circle {
+  0% {
+    stroke-dashoffset: 157;
+  }
+  75% {
+    stroke-dashoffset: -147;
+  }
+  100% {
+    stroke-dashoffset: -157;
+  }
+}
