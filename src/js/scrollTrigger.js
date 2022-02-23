@@ -7,6 +7,8 @@ function init() {
     'all': () => {
       // 문구 배경 이벤트
       onGsapChipBackground();
+      // 바디 트리거 이벤트
+      onGsapBodyThemeColor();
     },
     // pc
     '(min-width: 769px)': () => {
@@ -62,7 +64,50 @@ function onGsapChipBackground() {
 }
 
 function onGsapBodyThemeColor() {
+  const duration = 0.5;
+  const themeImages = document.querySelectorAll('.js-theme img');
 
+  const onProgress = theme => {
+    themeImages.forEach(item => {
+      gsap.to(item, {
+        duration: duration,
+        opacity: () => item.dataset.theme === theme ? 1 : 0
+      });
+    });
+  };
+
+  const onEnter = () => {
+    gsap.to(document.querySelector('.home-training-intro-section'), {
+      duration: duration,
+      backgroundColor: '#070707',
+      onProgress: () => {
+        onProgress('black');
+      }
+    });
+  };
+
+  const onLeave = () => {
+    gsap.to(document.querySelector('.home-training-intro-section'), {
+      duration: duration,
+      backgroundColor: '#fff',
+      onProgress: () => {
+        onProgress('white');
+      }
+    });
+  };
+
+  return gsap.timeline({
+    scrollTrigger: {
+      trigger: '.home-training-intro-section',
+      start: '-15% top',
+      end: `=${document.body.offsetHeight}`,
+      scrub: 1,
+      onEnter: onEnter,
+      onEnterBack: onEnter,
+      onLeave: onLeave,
+      onLeaveBack: onLeave
+    }
+  });
 }
 
 function onGsapImageSlider(width) {

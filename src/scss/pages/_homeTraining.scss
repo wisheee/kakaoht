@@ -12,12 +12,23 @@
 }
 
 .l-training-image {
+  position: relative;
   width: 25rem;
   height: 25rem;
+
+  img {
+    position: absolute;
+  }
 }
 
 .l-training-text {
+  position: relative;
   margin-top: 4rem;
+  width: 13rem;
+
+  img {
+    position: absolute;
+  }
 }
 // ----- 스마트홈트 인트로 이미지 섹션 끝 -----
 
@@ -199,14 +210,14 @@
 
   .ring-yellow {
     stroke: $c-main-yellow;
-    stroke-dasharray: 283;
-    stroke-dashoffset: 200;
+    stroke-dasharray: 282.28;
+    stroke-dashoffset: 282.28;
   }
 
   .ring-light-purple {
     stroke: $c-light-purple;
-    stroke-dasharray: 251;
-    stroke-dashoffset: 178;
+    stroke-dasharray: 250.92;
+    stroke-dashoffset: 250.92;
   }
 }
 
