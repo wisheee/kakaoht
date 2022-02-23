@@ -7,6 +7,14 @@ header {
   background: rgba($color: #fff, $alpha: 0.2);
   z-index: $z-header;
 
+  &.moving {
+    background: $c-black;
+
+    li:hover {
+      color: #fff;
+    }
+  }
+
   .inner {
     justify-content: space-between;
   }
