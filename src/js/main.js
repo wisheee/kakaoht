@@ -1,3 +1,5 @@
+import scrollTrigger from './scrollTrigger';
+
 (() => {
   // elements
   const header = document.querySelector('header');
@@ -20,4 +22,5 @@
   });
 
   handleScrollHeader();
+  scrollTrigger.init();
 })();
