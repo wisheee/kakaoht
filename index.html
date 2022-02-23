@@ -22,11 +22,11 @@
     </h1>
     <nav class="l-gnb">
       <ul>
-        <li class="active">
-          <a href="#service">서비스 소개</a>
+        <li>
+          <a href="#service" class="js-nav-link">서비스 소개</a>
         </li>
         <li>
-          <a href="#question">제휴문의</a>
+          <a href="#question" class="js-nav-link">제휴문의</a>
         </li>
         <li>
           <a href="#none">다운로드</a>
@@ -36,7 +36,7 @@
   </div>
 </header>
     <main>
-      <section id="service" class="service-section">
+      <section id="service" class="service-section" data-section="service">
   <div class="inner">
     <h2 class="service-title">
       운동을
@@ -50,7 +50,7 @@
     </figure>
   </div>
 </section>
-      <section class="exercise-section">
+      <section class="exercise-section" data-section="service">
   <div class="inner">
     <h2 class="exercise-title">
       <strong>다채로움,</strong>
@@ -95,17 +95,19 @@
     </div>
   </div>
 </section>
-      <section class="home-training-intro-section">
+      <section class="home-training-intro-section" data-section="service">
   <div class="inner">
-    <figure class="l-training-image">
-      <img src="images/home_training/Logo_2.png" alt="스마트홈트 이미지 화이트 테마">
+    <figure class="l-training-image js-theme">
+      <img src="images/home_training/Logo_1.gif" alt="스마트홈트 이미지 블랙 테마" data-theme="black">
+      <img src="images/home_training/Logo_2.png" alt="스마트홈트 이미지 화이트 테마" data-theme="white">
     </figure>
-    <div class="l-training-text">
-      <img src="images/home_training/Text_Logo_2.png" alt="스마트홈트 텍스트 화이트 테마">
+    <div class="l-training-text js-theme">
+      <img src="images/home_training/Text_Logo_1.png" alt="스마트홈트 텍스트 블랙 테마" data-theme="black">
+      <img src="images/home_training/Text_Logo_2.png" alt="스마트홈트 텍스트 화이트 테마" data-theme="white">
     </div>
   </div>
 </section>
-<section class="home-training-program-section">
+<section class="home-training-program-section" data-section="service">
   <div class="inner">
     <p class="home-training-section-text">HOME</p>
     <h2 class="home-training-title">
@@ -150,7 +152,7 @@
     </div>
   </div>
 </section>
-<section class="home-training-my-section">
+<section class="home-training-my-section" data-section="service">
   <div class="inner">
     <p class="home-training-section-text">MY</p>
     <h2 class="home-training-title">
@@ -160,36 +162,39 @@
     </h2>
   </div>
 </section>
-<section class="home-training-ring-section">
-  <div class="inner">
-    <div class="l-ring-content">
+<section class="home-training-ring-section" data-section="service">
+  <div class="inner js-ring-trigger">
+    <div class="l-ring-content js-ring-content">
       <div class="ring">
         <svg viewBox="0 0 100 100" style="background-image: url('images/home_training/Ring_Step1.gif');">
           <circle cx="50%" cy="50%" r="45"></circle>
-          <circle cx="50%" cy="50%" r="45" class="ring-yellow"></circle>
+          <circle cx="50%" cy="50%" r="45" class="ring-yellow js-ring"></circle>
           <circle cx="50%" cy="50%" r="40"></circle>
-          <circle cx="50%" cy="50%" r="40" class="ring-light-purple"></circle>
+          <circle cx="50%" cy="50%" r="40" class="ring-light-purple js-ring"></circle>
         </svg>
       </div>
       <div>
         <div class="l-recorder">
           <div class="record-time">
             <div class="recorder-title">운동시간</div>
-            <span class="recorder">37</span> /45분
+            <span class="recorder" data-min="0" data-max="45">0</span> /45분
           </div>
           <div class="record-calorie">
             <div class="recorder-title">소모칼로리</div>
-            <span class="recorder">190</span> /230kcal
+            <span class="recorder" data-min="0" data-max="230">0</span> /230kcal
           </div>
         </div>
         <div class="l-record-comment">
-          <p class="record-comment">귀찮더라도<br>움직여 보아요</p>
+          <p class="record-comment active" data-step="1">귀찮더라도<br><span>움직여 보아요</span></p>
+          <p class="record-comment" data-step="2">헛둘 헛둘<br><span>힘을 내보아요</span></p>
+          <p class="record-comment" data-step="3">들리시나요?<br><span>살빠지는 소리</span></p>
+          <p class="record-comment" data-step="4">순간의 뿌듯함을<br><span>만끽해 보세요</span></p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section class="home-training-playlist-section">
+<section class="home-training-playlist-section" data-section="service">
   <div class="inner">
     <p class="home-training-section-text">PLAYLIST</p>
     <h2 class="home-training-title">
@@ -211,7 +216,7 @@
     </div>
   </div>
 </section>
-      <section class="habits-section">
+      <section class="habits-section" data-section="service">
   <div class="inner">
     <figure class="habits-bi">
       <span class="text-hidden">kakaoVX</span>
@@ -219,7 +224,7 @@
     <p>건강한 습관을 함께해요</p>
   </div>
 </section>
-      <section id="question" class="question-section">
+      <section id="question" class="question-section" data-section="question">
   <div class="inner">
     <h2 class="question-title">제휴문의</h2>
     <p class="question-desc">
@@ -335,6 +340,7 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollToPlugin.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
