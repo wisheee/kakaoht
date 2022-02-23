@@ -1,10 +1,10 @@
-
-
 function init() {
   gsap.registerPlugin(ScrollTrigger);
 
   ScrollTrigger.matchMedia({
     'all': () => {
+      // 메뉴 트리거 이벤트
+      onGsapGnbMenuScroll();
       // 문구 배경 이벤트
       onGsapChipBackground();
       // 바디 트리거 이벤트
@@ -40,6 +40,40 @@ function init() {
         tl3.kill();
       };
     }
+  });
+}
+
+function onGsapGnbMenuScroll() {
+  // 메뉴 이동
+  const navLinks = gsap.utils.toArray('.js-nav-link');
+  navLinks.forEach(item => {
+    const activeSection = item.getAttribute('href');
+    item.addEventListener('click', e => {
+      e.preventDefault();
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: activeSection
+      });
+    });
+  });
+
+  // 메뉴 스크롤 스파이
+  const sections = gsap.utils.toArray('section');
+  sections.forEach(section => {
+    const activeSectionMenu = section.dataset.section;
+    const navLink = document.querySelector(`.js-nav-link[href='#${activeSectionMenu}']`);
+    const navLinkWrap = navLink.parentNode;
+    
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top 100%',
+      end: 'bottom bottom',
+      // markers: true,
+      onEnter: () => navLinkWrap.classList.add('active'),
+      onLeave: () => navLinkWrap.classList.remove('active'),
+      onEnterBack: () => navLinkWrap.classList.add('active'),
+      onLeaveBack: () => navLinkWrap.classList.remove('active')
+    });
   });
 }
 
