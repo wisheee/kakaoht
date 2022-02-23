@@ -12,11 +12,14 @@ function init() {
     '(min-width: 769px)': () => {
       // 이미지 슬라이더
       const tl1 = onGsapImageSlider(202);
+      // 링 이벤트
+      const tl2 = onGsapRingProgress();
       // 플레이리스트
-      const tl3 = onGsapBodyPlaylistPhone('pc');
+      const tl3 = onGsapPlaylistPhone('pc');
 
       return () => {
         tl1.kill();
+        tl2.kill();
         tl3.kill();
       };
     },
@@ -24,11 +27,14 @@ function init() {
     '(max-width: 768px)': () => {
       // 이미지 슬라이더
       const tl1 = onGsapImageSlider(129);
+      // 링 이벤트
+      const tl2 = onGsapRingProgress();
       // 플레이리스트
-      const tl3 = onGsapBodyPlaylistPhone('mobile');
+      const tl3 = onGsapPlaylistPhone('mobile');
 
       return () => {
         tl1.kill();
+        tl2.kill();
         tl3.kill();
       };
     }
@@ -93,13 +99,75 @@ function onGsapImageSlider(width) {
   return timeline;
 }
 
-function onGsapBodyPlaylistPhone(device) {
+function onGsapRingProgress() {
+  const ringContent = document.querySelector('.js-ring-content');
+  const rings = document.querySelectorAll('.js-ring-content .js-ring');
+  const svg = document.querySelector('.js-ring-content svg');
+  const recorders = document.querySelectorAll('.js-ring-content .recorder');
+  const comments = document.querySelectorAll('.js-ring-content .record-comment');
+
+  const onCircleStroke = (ringElem, percent) => {
+    const totalLength = ringElem.getTotalLength();
+    const offset = totalLength - percent / 100 * totalLength;
+    ringElem.style.strokeDashoffset = offset;
+  };
+
+  const onStart = () => {
+    rings.forEach(item => {
+      onCircleStroke(item, 0);
+    });
+  };
+
+  const onUpdate = self => {
+    let percent = calcScrollPercent(self.start, self.end) * 100;
+    if (isNaN(percent))
+      percent = 0;
+    
+    const stepNum = percent < 1 ? 1 : Math.ceil(percent / 25);
+    svg.style.backgroundImage = `url('images/home_training/Ring_Step${stepNum}.gif')`;
+    comments.forEach(item => {
+      if (item.dataset.step == stepNum) {
+        item.classList.add('active');
+        return;
+      }
+      item.classList.remove('active');
+    });
+    rings.forEach(item => {
+      onCircleStroke(item, percent);
+    });
+    recorders.forEach(item => {
+      const min = item.dataset.min;
+      const max = item.dataset.max;
+      const value = Math.round((max - min) * percent / 100);
+      item.innerText = isNaN(value) ? 0 : value;
+    });
+  };
+
+  const timeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.js-ring-trigger',
+      start: () => {
+        return `${ringContent.offsetHeight / 2}px center`;
+      },
+      end: 'bottom bottom',
+      scrub: 1,
+      pin: true,
+      onStart: onStart,
+      onUpdate: onUpdate
+    }
+  });
+
+  return timeline;
+}
+
+function onGsapPlaylistPhone(device) {
   const phoneWrap = document.querySelector('.js-playlist-phone');
   const phones = document.querySelectorAll('.js-playlist-phone .phone');
   gsap.set([phoneWrap, phones], {
     clearProps: 'all'
   });
   
+  // pc(min-width: 769px)일 경우
   if (device == 'pc') {
     const timeline = gsap.timeline({
       scrollTrigger: {
@@ -120,6 +188,7 @@ function onGsapBodyPlaylistPhone(device) {
     return timeline;
   }
   
+  // mobile(max-width: 768px)일 경우
   return gsap.timeline({
     scrollTrigger: {
       trigger: '.home-training-playlist-section',
@@ -127,17 +196,7 @@ function onGsapBodyPlaylistPhone(device) {
       end: 'bottom 50%',
       scrub: 1,
       onUpdate: (self) => {
-        const start = self.start;
-        const end = self.end;
-        let scrollTop = window.pageYOffset;
-        
-        if (scrollTop < start) {
-          scrollTop = start + 1;
-        } else if (scrollTop > end) {
-          scrollTop = end;
-        }
-
-        let percent = (scrollTop - start) / (end - start);
+        let percent = calcScrollPercent(self.start, self.end);
         if (percent > 1)
           percent = 1;
         
@@ -148,6 +207,18 @@ function onGsapBodyPlaylistPhone(device) {
     },
     clearProps: 'all'
   });
+}
+
+function calcScrollPercent(start, end) {
+  let scrollTop = window.pageYOffset;
+  
+  if (scrollTop < start) {
+    scrollTop = start + 1;
+  } else if (scrollTop > end) {
+    scrollTop = end;
+  }
+
+  return (scrollTop - start) / (end - start);
 }
 
 export default {

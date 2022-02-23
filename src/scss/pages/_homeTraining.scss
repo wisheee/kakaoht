@@ -211,6 +211,7 @@
 }
 
 .l-recorder {
+  padding-right: 5rem;
   line-height: 6.8rem;
   font-size: 5.4rem;
   font-weight: $fw-light;
@@ -264,28 +265,36 @@
 }
 
 .record-comment {
-  display: inline-block;
+  display: none;
   position: relative;
   transition: 0.5s;
 
-  &::before, &::after {
+  &.active {
+    display: inline-block;
+  }
+
+  &::before {
     content: '';
     position: absolute;
     width: 1.8rem;
     height: 1.3rem;
-    background-repeat: no-repeat;
-  }
-
-  &::before {
     top: 0;
     left: -2.5rem;
-    background-image: url('../images/home_training/Quote_Open.png');
+    background: url('../images/home_training/Quote_Open.png') no-repeat;
   }
 
-  &::after {
-    bottom: 0;
-    right: -2.5rem;
-    background-image: url('../images/home_training/Quote_Close.png');
+  span {
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      width: 1.8rem;
+      height: 1.3rem;
+      bottom: 0;
+      right: -2.5rem;
+      background: url('../images/home_training/Quote_Close.png') no-repeat;
+    }
   }
 }
 // ----- 스마트홈트 운동 링 섹션 끝 -----

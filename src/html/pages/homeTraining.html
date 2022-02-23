@@ -64,29 +64,32 @@
   </div>
 </section>
 <section class="home-training-ring-section">
-  <div class="inner">
-    <div class="l-ring-content">
+  <div class="inner js-ring-trigger">
+    <div class="l-ring-content js-ring-content">
       <div class="ring">
         <svg viewBox="0 0 100 100" style="background-image: url('images/home_training/Ring_Step1.gif');">
           <circle cx="50%" cy="50%" r="45"></circle>
-          <circle cx="50%" cy="50%" r="45" class="ring-yellow"></circle>
+          <circle cx="50%" cy="50%" r="45" class="ring-yellow js-ring"></circle>
           <circle cx="50%" cy="50%" r="40"></circle>
-          <circle cx="50%" cy="50%" r="40" class="ring-light-purple"></circle>
+          <circle cx="50%" cy="50%" r="40" class="ring-light-purple js-ring"></circle>
         </svg>
       </div>
       <div>
         <div class="l-recorder">
           <div class="record-time">
             <div class="recorder-title">운동시간</div>
-            <span class="recorder">37</span> /45분
+            <span class="recorder" data-min="0" data-max="45">0</span> /45분
           </div>
           <div class="record-calorie">
             <div class="recorder-title">소모칼로리</div>
-            <span class="recorder">190</span> /230kcal
+            <span class="recorder" data-min="0" data-max="230">0</span> /230kcal
           </div>
         </div>
         <div class="l-record-comment">
-          <p class="record-comment">귀찮더라도<br>움직여 보아요</p>
+          <p class="record-comment active" data-step="1">귀찮더라도<br><span>움직여 보아요</span></p>
+          <p class="record-comment" data-step="2">헛둘 헛둘<br><span>힘을 내보아요</span></p>
+          <p class="record-comment" data-step="3">들리시나요?<br><span>살빠지는 소리</span></p>
+          <p class="record-comment" data-step="4">순간의 뿌듯함을<br><span>만끽해 보세요</span></p>
         </div>
       </div>
     </div>
