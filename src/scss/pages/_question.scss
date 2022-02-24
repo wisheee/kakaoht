@@ -3,6 +3,10 @@
   height: 100%;
   background: $c-sub-black;
   color: #fff;
+
+  @include respond-to('medium') {
+    padding: 8rem 0;
+  }
   
   .inner {
     flex-direction: column;
@@ -13,6 +17,10 @@
 .question-title {
   line-height: 7rem;
   font-size: 3.5rem;
+
+  @include respond-to('medium') {
+    font-size: 2rem;
+  }
 }
 
 .question-desc {
@@ -22,6 +30,13 @@
   font-size: 2rem;
   color: $c-dark-white;
   letter-spacing: -0.05rem;
+
+  @include respond-to('medium') {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    line-height: 2.2rem;
+    font-size: 1.4rem;
+  }
 }
 
 .l-question-form {
@@ -29,6 +44,10 @@
   padding: 6.3rem 4rem 3.4rem;
   background-color: $c-black;
   border-radius: 1rem;
+
+  @include respond-to('medium') {
+    padding: 6.3rem 2rem 3.4rem;
+  }
 
   .l-form-control {
     display: flex;
@@ -45,6 +64,10 @@
     line-height: 2.3rem;
     font-size: 1.8rem;
     color: $c-light-gray;
+
+    @include respond-to('medium') {
+      font-size: 1.6rem;
+    }
 
     span {
       font-weight: $fw-light;
@@ -66,6 +89,11 @@
   display: flex;
   padding-bottom: 2rem;
 
+  @include respond-to('medium') {
+    padding-bottom: 0.5rem;
+    flex-direction: column;
+  }
+
   input {
     flex-grow: 1;
   }
@@ -79,6 +107,12 @@
     line-height: 4.6rem;
     font-weight: $fw-bold;
     font-size: 1.6rem;
+
+    @include respond-to('medium') {
+      margin-left: auto;
+      margin-top: 1rem;
+      width: 10rem;
+    }
   }
 }
 
@@ -88,6 +122,10 @@
   right: 4rem;
   font-size: 1.6rem;
   font-weight: $fw-thick;
+
+  @include respond-to('medium') {
+    font-size: 1.4rem;
+  }
 }
 
 .required-mark {
@@ -184,5 +222,9 @@ input[type=checkbox] {
     background-color: $c-main-yellow;
     font-size: 1.6rem;
     color: #1e1e1e;
+
+    @include respond-to('medium') {
+      width: 100%;
+    }
   }
 }

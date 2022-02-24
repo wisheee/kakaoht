@@ -3,6 +3,11 @@
   background: url('../images/habits/background2.png') no-repeat center;
   background-size: cover;
   color: #fff;
+
+  @include respond-to('medium') {
+    height: 36rem;
+    background-position: left 55% bottom;
+  }
   
   .inner {
     flex-direction: column;
@@ -14,6 +19,10 @@
     line-height: 7rem;
     font-size: 5rem;
     font-weight: $fw-bold;
+
+    @include respond-to('medium') {
+      font-size: 2.5rem;
+    }
   }
 }
 
@@ -21,4 +30,8 @@
   width: 100%;
   height: 5.4rem;
   background: url('../images/habits/BI_2.png') no-repeat center;
+
+  @include respond-to('medium') {
+    margin-bottom: -2.5rem;
+  }
 }

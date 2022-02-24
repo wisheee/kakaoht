@@ -52,19 +52,33 @@
   .inner {
     flex-direction: column;
     padding-top: 19rem;
+
+    @include respond-to('medium') {
+      padding-top: 6rem;
+    }
   }
 
   .l-phone {
     position: absolute;
     right: 0;
+
+    @include respond-to('medium') {
+      top: 31rem;
+      left: 0;
+    }
   }
 }
 
 .home-training-section-text {
   color: $c-main-yellow;
   font-weight: $fw-bold;
-  font-size: 2.5rem;
   line-height: 2.9rem;
+  font-size: 2.5rem;
+  
+  @include respond-to('medium') {
+    line-height: 1.7rem;
+    font-size: 1.5rem;
+  }
 }
 
 .home-training-title {
@@ -72,6 +86,12 @@
   line-height: 7rem;
   font-size: 5rem;
   font-weight: $fw-light;
+
+  @include respond-to('medium') {
+    margin-top: 1rem;
+    line-height: 4rem;
+    font-size: 2.5rem;
+  }
 
   span {
     opacity: 0.6;
@@ -101,6 +121,16 @@
   background-color: $c-black;
   border: 1rem solid #2c2c2c;
   border-radius: 5rem;
+
+  @include respond-to('medium') {
+    margin: 0 auto;
+    padding-left: 1.2rem;
+    width: 24rem;
+    height: 49rem;
+    border: 0.6rem solid #2c2c2c;
+    border-radius: 2.3rem;
+    box-shadow: 0px 1px 0px 1px #414141 inset;
+  }
 }
 
 .l-phone-header {
@@ -108,6 +138,11 @@
   align-items: center;
   height: 6.2rem;
   margin-bottom: 1rem;
+
+  @include respond-to('medium') {
+    height: 3.6rem;
+    margin-bottom: 1.3rem;
+  }
 }
 
 .phone-header-bi {
@@ -116,6 +151,11 @@
   height: 2.4rem;
   background: url('../images/common/Main.png') no-repeat center;
   background-size: contain;
+
+  @include respond-to('medium') {
+    width: 6.2rem;
+    height: 1.5rem;
+  }
 }
 
 .l-phone-content {
@@ -125,14 +165,35 @@
     font-size: 2rem;
     line-height: 2.7rem;
     letter-spacing: 0.06rem;
+
+    @include respond-to('medium') {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      line-height: 1.5rem;
+      letter-spacing: 0.03rem;
+    }
   }
 }
 
 .phone-content-program {
   padding-bottom: 4.2rem;
 
-  img:last-child {
-    margin-left: 1.8rem;
+  @include respond-to('medium') {
+    padding-bottom: 2rem;
+  }
+
+  img {
+    @include respond-to('medium') {
+      height: 14.8rem;
+    }
+
+    &:last-child {
+      margin-left: 1.8rem;
+
+      @include respond-to('medium') {
+        margin-left: 1rem;
+      }
+    }
   }
 }
 
@@ -141,12 +202,22 @@
 
   img {
     margin-right: 2.2rem;
+
+    @include respond-to('medium') {
+      width: 11.55rem;
+      margin-right: 1.2rem;
+    }
   }
 }
 
 .phone-content-banner {
   padding-top: 4.2rem;
   padding-right: 2.2rem;
+
+  @include respond-to('medium') {
+    padding-top: 2rem;
+    padding-right: 1.2rem;
+  }
 }
 
 .l-phone-bottom {
@@ -158,10 +229,24 @@
   background: rgba(30, 30, 30, 0.8);
   backdrop-filter: blur(1.1rem);
 
+  @include respond-to('medium') {
+    height: 4rem;
+  }
+
   ul {
     display: flex;
     justify-content: space-evenly;
     margin-top: 1rem;
+
+    @include respond-to('medium') {
+      margin-top: 0.8rem;
+    }
+
+    li {
+      @include respond-to('medium') {
+        width: 2.8rem;
+      }
+    }
   }
 }
 // ----- 스마트홈트 나와 맞는 운동 섹션 끝 -----
@@ -172,10 +257,18 @@
   height: 54.6rem;
   background: $c-sub-black;
   color: #fff;
+
+  @include respond-to('medium') {
+    height: 27.4rem;
+  }
   
   .inner {
     flex-direction: column;
     padding-top: 19rem;
+
+    @include respond-to('medium') {
+      padding-top: 6rem;
+    }
   }
 }
 // ----- 스마트홈트 나의 숨결 기록 섹션 끝 -----
@@ -194,10 +287,20 @@
 
 .l-ring-content {
   display: flex;
+
+  @include respond-to('medium') {
+    flex-direction: column;
+  }
 }
 
 .ring {
   margin-right: 9.2rem;
+
+  @include respond-to('medium') {
+    margin-right: 0;
+    margin-bottom: 1.3rem;
+    text-align: center;
+  }
 
   svg {
     width: 55rem;
@@ -207,6 +310,12 @@
     background-position: 50% 80%;
     background-size: 40rem;
     transition: 0.5s;
+
+    @include respond-to('medium') {
+      width: 22rem;
+      height: 22rem;
+      background-size: 16rem;
+    }
   }
 
   circle {
@@ -235,14 +344,26 @@
   padding-right: 5rem;
   line-height: 6.8rem;
   font-size: 5.4rem;
+  white-space: nowrap;
   font-weight: $fw-light;
   color: $c-gray;
+
+  @include respond-to('medium') {
+    padding-right: 0;
+    line-height: 3.7rem;
+    font-size: 3rem;
+  }
 
   .recorder {
     margin-right: 0.3rem;
     line-height: 8.8rem;
     font-size: 7rem;
     font-weight: $fw-bold;
+
+    @include respond-to('medium') {
+      line-height: 3.7rem;
+      font-size: 3rem;
+    }
   }
 }
 
@@ -251,10 +372,21 @@
   font-size: 2rem;
   font-weight: $fw-bold;
   color: #fff;
+
+  @include respond-to('medium') {
+    margin-bottom: 0.7rem;
+    line-height: 1.7rem;
+    font-size: 1.4rem;
+  }
 }
 
 .record-time {
   margin-bottom: 4.3rem;
+
+  @include respond-to('medium') {
+    margin: 0.7rem auto;
+    width: 15rem;
+  }
   
   span {
     color: $c-main-yellow;
@@ -262,6 +394,11 @@
 }
 
 .record-calorie {
+  @include respond-to('medium') {
+    margin: 0.7rem auto;
+    width: 15rem;
+  }
+
   span {
     color: $c-light-purple;
   }
@@ -273,6 +410,14 @@
   font-size: 5rem;
   line-height: 7rem;
   color: #fff;
+
+  @include respond-to('medium') {
+    margin-top: 4.5rem;
+    font-size: 2.4rem;
+    line-height: 3.3rem;
+    padding-bottom: 2.8rem;
+    text-align: center;
+  }
 
   &::after {
     content: '';
@@ -294,27 +439,45 @@
     display: inline-block;
   }
 
-  &::before {
-    content: '';
-    position: absolute;
-    width: 1.8rem;
-    height: 1.3rem;
-    top: 0;
-    left: -2.5rem;
-    background: url('../images/home_training/Quote_Open.png') no-repeat;
-  }
-
   span {
     position: relative;
-    
-    &::after {
-      content: '';
-      position: absolute;
-      width: 1.8rem;
-      height: 1.3rem;
-      bottom: 0;
-      right: -2.5rem;
-      background: url('../images/home_training/Quote_Close.png') no-repeat;
+
+    &:first-child {
+      &::before {
+        content: '';
+        position: absolute;
+        width: 1.8rem;
+        height: 1.3rem;
+        top: 0;
+        left: -2.5rem;
+        background: url('../images/home_training/Quote_Open.png') no-repeat;
+
+        @include respond-to('medium') {
+          width: 0.9rem;
+          height: 0.6rem;
+          left: -1.5rem;
+          background-size: cover;
+        }
+      }
+    }
+
+    &:last-child {
+      &::after {
+        content: '';
+        position: absolute;
+        width: 1.8rem;
+        height: 1.3rem;
+        bottom: 0;
+        right: -2.5rem;
+        background: url('../images/home_training/Quote_Close.png') no-repeat;
+  
+        @include respond-to('medium') {
+          width: 0.9rem;
+          height: 0.6rem;
+          right: -1.5rem;
+          background-size: cover;
+        }
+      }
     }
   }
 }
@@ -326,27 +489,60 @@
   height: 156.8rem;
   background: $c-black;
   color: #fff;
+
+  @include respond-to('medium') {
+    height: 90rem;
+  }
   
   .inner {
     flex-direction: column;
     padding-top: 19rem;
+
+    @include respond-to('medium') {
+      padding-top: 17rem;
+    }
+  }
+
+  .l-playlist-section-phone {
+    @include respond-to('medium') {
+      padding-top: 5rem;
+      text-align: center;
+      white-space: nowrap;
+    }
   }
 
   .l-playlist-phone {
     position: absolute;
     right: 0;
     top: 19rem;
+
+    @include respond-to('medium') {
+      position: static;
+      display: inline-block;
+      margin-left: 12rem;
+      margin-right: 2rem;
+    }
   }
 
   .l-tutorial-phone {
     position: absolute;
     left: 0;
     bottom: 18rem;
+
+    @include respond-to('medium') {
+      position: static;
+      display: inline-block;
+    }
   }
 
   .phone {
     box-sizing: content-box;
     padding-left: 0;
+
+    @include respond-to('medium') {
+      width: 23rem;
+      height: 47.5rem;
+    }
   }
 }
 // ----- 스마트홈트 플레이리스트 섹션 끝 -----
