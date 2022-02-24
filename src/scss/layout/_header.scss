@@ -9,6 +9,10 @@ header {
 
   @include respond-to('medium') {
     height: 6.4rem;
+
+    @at-root .side-menu-open & {
+      background: $c-black;
+    }
   }
 
   &.moving {
@@ -56,6 +60,10 @@ header {
     top: 6.4rem;
     left: 0;
     background-color: $c-black;
+  }
+
+  @at-root .side-menu-open & {
+    display: block;
   }
 
   ul {
@@ -114,4 +122,8 @@ header {
   width: 100%;
   height: 100%;
   background: url('../images/common/Icon_Menu.png') no-repeat center;
+
+  @at-root .side-menu-open & {
+    background-image: url('../images/common/Icon_MenuClose.png');
+  }
 }

@@ -24,6 +24,13 @@ body {
 		visibility: hidden;
 		opacity: 0;
 	}
+
+	@include respond-to('medium') {
+    &.side-menu-open {
+			overflow: hidden;
+			height: 100%;
+		}
+  }
 }
 
 .wrap {

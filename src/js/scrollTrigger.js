@@ -54,6 +54,7 @@ function onGsapGnbMenuScroll() {
         duration: 1,
         scrollTo: activeSection
       });
+      document.body.classList.remove('side-menu-open');
     });
   });
 
