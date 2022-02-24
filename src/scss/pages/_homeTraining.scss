@@ -16,6 +16,11 @@
   width: 25rem;
   height: 25rem;
 
+  @include respond-to('medium') {
+    width: 12.5rem;
+    height: 12.5rem;
+  }
+
   img {
     position: absolute;
   }
@@ -25,6 +30,11 @@
   position: relative;
   margin-top: 4rem;
   width: 13rem;
+
+  @include respond-to('medium') {
+    margin-top: 2rem;
+    width: 8.7rem;
+  }
 
   img {
     position: absolute;

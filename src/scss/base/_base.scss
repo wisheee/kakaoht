@@ -37,6 +37,11 @@ body {
   max-width: 106rem;
   height: 100%;
   margin: auto;
+
+	@include respond-to('medium') {
+    width: 100%;
+		padding: 0 2rem;
+  }
 }
 
 .text-hidden {

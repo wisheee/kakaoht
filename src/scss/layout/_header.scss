@@ -7,6 +7,10 @@ header {
   background: rgba($color: #fff, $alpha: 0.2);
   z-index: $z-header;
 
+  @include respond-to('medium') {
+    height: 6.4rem;
+  }
+
   &.moving {
     background: $c-black;
 
@@ -22,6 +26,10 @@ header {
 
 .l-logo {
   width: 9.1rem;
+
+  @include respond-to('medium') {
+    width: 8.5rem;
+  }
 
   a {
     display: block;
