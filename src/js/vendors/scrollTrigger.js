@@ -1,4 +1,6 @@
-function init() {
+import utils from '../common/utils';
+
+const init = () => {
   gsap.registerPlugin(ScrollTrigger);
 
   ScrollTrigger.matchMedia({
@@ -43,7 +45,7 @@ function init() {
   });
 }
 
-function onGsapGnbMenuScroll() {
+const onGsapGnbMenuScroll = () => {
   // 메뉴 이동
   const navLinks = gsap.utils.toArray('.js-nav-link');
   navLinks.forEach(item => {
@@ -78,7 +80,8 @@ function onGsapGnbMenuScroll() {
   });
 }
 
-function onGsapChipBackground() {
+// 다채로움 섹션 단어 배경색 변경 이벤트
+const onGsapChipBackground = () => {
   const chips = document.querySelectorAll('.chip');
   const timeline = gsap.timeline({
     scrollTrigger: {
@@ -98,7 +101,8 @@ function onGsapChipBackground() {
   return timeline;
 }
 
-function onGsapBodyThemeColor() {
+// 스마트홈트 인트로 테마 변경 이벤트
+const onGsapBodyThemeColor = () => {
   const duration = 0.5;
   const themeImages = document.querySelectorAll('.js-theme img');
 
@@ -145,7 +149,8 @@ function onGsapBodyThemeColor() {
   });
 }
 
-function onGsapImageSlider(width) {
+// 나와 맞는 운동 핸드폰 이미지 슬라이더 이벤트
+const onGsapImageSlider = (width) => {
   const wrapper = document.querySelector('.js-img-slider');
   const slides = document.querySelectorAll('.js-img-slider img');
   const options = {
@@ -179,7 +184,8 @@ function onGsapImageSlider(width) {
   return timeline;
 }
 
-function onGsapRingProgress() {
+// 나의 기록 링 이벤트
+const onGsapRingProgress = () => {
   const ringContent = document.querySelector('.js-ring-content');
   const rings = document.querySelectorAll('.js-ring-content .js-ring');
   const svg = document.querySelector('.js-ring-content svg');
@@ -199,7 +205,7 @@ function onGsapRingProgress() {
   };
 
   const onUpdate = self => {
-    let percent = calcScrollPercent(self.start, self.end) * 100;
+    let percent = utils.calcScrollPercent(self.start, self.end) * 100;
     if (isNaN(percent))
       percent = 0;
     
@@ -240,7 +246,8 @@ function onGsapRingProgress() {
   return timeline;
 }
 
-function onGsapPlaylistPhone(device) {
+// 플레이리스트 휴대폰 위치 변경 이벤트
+const onGsapPlaylistPhone = (device) => {
   const phoneWrap = document.querySelector('.js-playlist-phone');
   const phones = document.querySelectorAll('.js-playlist-phone .phone');
   gsap.set([phoneWrap, phones], {
@@ -276,7 +283,7 @@ function onGsapPlaylistPhone(device) {
       end: 'bottom 50%',
       scrub: 1,
       onUpdate: (self) => {
-        let percent = calcScrollPercent(self.start, self.end);
+        let percent = utils.calcScrollPercent(self.start, self.end);
         if (percent > 1)
           percent = 1;
         
@@ -289,18 +296,6 @@ function onGsapPlaylistPhone(device) {
   });
 }
 
-function calcScrollPercent(start, end) {
-  let scrollTop = window.pageYOffset;
-  
-  if (scrollTop < start) {
-    scrollTop = start + 1;
-  } else if (scrollTop > end) {
-    scrollTop = end;
-  }
-
-  return (scrollTop - start) / (end - start);
-}
-
 export default {
   init
-}
+};
